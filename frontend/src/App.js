@@ -2,7 +2,7 @@
 // It is the first file that is executed when the frontend is started.
 // When committing changes to this file, make sure to add a comment to the commit explaining the changes made.
 import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 // Components
@@ -15,6 +15,8 @@ import GTL from "./Pages/GTL/GTL.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import ResetPass from "./Pages/ResetPass/ResetPass.jsx";
+
+// Theme for ChakraProvider should be added.
 
 function App() {
   return (
