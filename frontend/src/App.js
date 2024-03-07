@@ -1,23 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import Home from './Pages/Home/Home';
-import Login from "./Pages/Login/Login";
-import Register from "./Pages/Register/Register";
 import Footer from './Components/Footer/Footer';
 import { useState } from "react";
 import { IntlProvider } from "react-intl";
 import translations from "./Translations";
-import ForgotPass from './Pages/ForgotPass/ForgotPass';
-import ResetPass from './Pages/ResetPass/ResetPass';
 
 function App() {
 
-  const [locale, setLocale] = useState('EN');
-
+  const [locale, setLocale] = useState("EN");
   const [menu, setMenu] = useState("home");
 
+  const messages = translations[locale];
+
   return (
-    <h1>App</h1>
+    <IntlProvider locale={locale} messages={messages}>
+      <BrowserRouter>
+        <Navbar onSelectLanguage={setLocale} onSelectMenu={setMenu} menu={menu}/>
+        <Routes>
+        </Routes>
+      </BrowserRouter>
+    </IntlProvider>
   );
 }
 
