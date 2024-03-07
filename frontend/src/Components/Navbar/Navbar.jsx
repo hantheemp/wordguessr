@@ -1,57 +1,67 @@
 import React from "react";
-import "./Navbar.css";
-import logo from "../Assets/logo.jpg";
-import { Link } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
+import { Box, Flex, Spacer, Heading, Button, ChakraProvider } from "@chakra-ui/react";
+import navbar from "./navbar.js";
 
-const Navbar = (props) => {
-  const handleLanguageChange = (lan) => {
-    props.onSelectLanguage(lan);
-  };
+const Navbar = () => {
+  return (
+    
+    <ChakraProvider theme={navbar}>
+      <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      padding="1rem"
+      bg="blue.500"
+      color="white"
+    >
+      <Flex align="center" mr={5}>
+        <Heading className="heading" as="h1" size="md">
+          WordGuessr
+        </Heading>
+      </Flex>
 
-  const handleMenuChange = (menu) => {
-    props.onSelectMenu(menu);
-  };
+      <Box>
+        <Button
+          className="navbar-navigation-buttons"
+          as="a"
+          variant="link"
+          href="/"
+          colorScheme="whiteAlpha"
+        >
+          Home
+        </Button>
+        <Button
+          className="navbar-navigation-buttons"
+          as="a"
+          variant="link"
+          href="/about"
+          colorScheme="whiteAlpha"
+        >
+          About
+        </Button>
+        <Button
+          className="navbar-navigation-buttons"
+          as="a"
+          variant="link"
+          href="/guess"
+          colorScheme="whiteAlpha"
+        >
+          Guess the Language
+        </Button>
+      </Box>
 
-return (
-    <div className="navbar">
-        <div className="navtop">
-            <div className="navtop-lang">
-                <button onClick={() => handleLanguageChange("EN")}>EN</button>
-                <button onClick={() => handleLanguageChange("TR")}>TR</button>
-            </div>
-            <div className="navtop-body">
-                <div className="navtop-body-logo">
-                    <Link to="/">
-                        <img src={logo} alt="logo" className="logo-image" />
-                    </Link>
-                </div>
-                <ul>
-                    <li onClick={() => handleMenuChange("home")}>
-                        <Link to="/">
-                            <FormattedMessage id="home" />
-                        </Link>{" "}
-                        {props.menu === "home" ? <div className="underline"></div> : null}
-                    </li>
-                    <li onClick={() => handleMenuChange("about")}>
-                        <Link to="/about">
-                            <FormattedMessage id="about" />
-                        </Link>{" "}
-                        {props.menu === "about" ? (
-                            <div className="underline"></div>
-                        ) : null}
-                    </li>
-                    <li onClick={() => handleMenuChange("gtl")}>
-                        <Link to="/gtl">
-                            <FormattedMessage id="gtl" />
-                        </Link>{" "}
-                        {props.menu === "gtl" ? <div className="underline"></div> : null}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-);
+      <Box>
+        <Button variant="outline" colorScheme="whiteAlpha">
+          Sign In
+        </Button>
+        <Button ml={4} colorScheme="whiteAlpha">
+          Sign Up
+        </Button>
+      </Box>
+    </Flex>
+    </ChakraProvider>
+
+  );
 };
 
 export default Navbar;
