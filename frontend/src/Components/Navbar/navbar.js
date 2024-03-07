@@ -11,9 +11,16 @@ const navbar = extendTheme({
         color: "white",
         userSelect: "none",
       },
-      ".navbar-navigation-buttons": {
+      ".navbar-navigation-button": {
+        margin: "0 1rem",
+        justify: "space-between",
+      },
+      ".navbar-navigation-button:hover": {
+        bg: "blue.400",
+      },
+      ".navbar-navigation-button-text": {
         color: "white",
-        fontSize: "1.5rem",
+        fontSize: "1.0rem",
         fontWeight: "bold",
         margin: "0 1rem",
       },
