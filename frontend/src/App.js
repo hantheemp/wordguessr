@@ -1,4 +1,4 @@
-// Important Note: This is the main file of the frontend. 
+// Important Note: This is the main file of the frontend.
 // It is the first file that is executed when the frontend is started.
 // When committing changes to this file, make sure to add a comment to the commit explaining the changes made.
 import React from "react";
@@ -17,20 +17,19 @@ import Register from "./Pages/Register/Register.jsx";
 import ResetPass from "./Pages/ResetPass/ResetPass.jsx";
 
 // Theme for ChakraProvider should be added.
- 
-// selam
+
 function App() {
   return (
     <ChakraProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/gtl" element={<GTL/>} />
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/resetpass" element={<ResetPass/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/gtl" element={<GTL />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/resetpass" element={<ResetPass />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
