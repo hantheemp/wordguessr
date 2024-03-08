@@ -1,12 +1,10 @@
-// Important Note: This is the main file of the frontend.
-// It is the first file that is executed when the frontend is started.
-// When committing changes to this file, make sure to add a comment to the commit explaining the changes made.
 import React from "react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 // Components
 import Navbar from "./Components/Navbar/Navbar.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 
 // Pages
 import Home from "./Pages/Home/Home.jsx";
@@ -16,21 +14,50 @@ import SignIn from "./Pages/SignIn/SignIn.jsx";
 import SignUp from "./Pages/SignUp/SignUp.jsx";
 import ResetPass from "./Pages/ResetPass/ResetPass.jsx";
 
-// Theme for ChakraProvider should be added.
+// Assets
+import backgroundImage from "./Components/Assets/Gradient.png";
+
+const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        margin: 0,
+        padding: 0,
+      },
+    },
+  },
+});
+
+const backgroundStyles = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  zIndex: -1,
+  background: `url(${backgroundImage})`,
+  backgroundSize: "cover",
+  filter: "blur(8px)",
+  opacity: "0.2",
+};
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gtl" element={<GTL />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/resetpass" element={<ResetPass />} />
-        </Routes>
+        <div style={backgroundStyles}></div>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gtl" element={<GTL />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/resetpass" element={<ResetPass />} />
+          </Routes>
+          <Footer />
+        </div>
       </BrowserRouter>
     </ChakraProvider>
   );
