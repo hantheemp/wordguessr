@@ -1,4 +1,4 @@
-## WordGuessr
+## *WordGuessr*
 
 WordGuessr is an open-source project that combines the power of Express.js, React, Chakra UI, and MySQL to create an engaging and educational game. The game challenges players to guess the original language of a word by visually inspecting it. With features like registration, login, and instant connections to a database, WordGuessr aims to entertain while also providing insights into linguistic differences between languages.
 
