@@ -1,11 +1,11 @@
 import {
   ButtonGroup,
   ChakraProvider,
-  Container,
   Flex,
   IconButton,
   Stack,
   Text,
+  Spacer,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Logo from "../Assets/Logo.png";
@@ -21,17 +21,16 @@ const Footer = () => (
       justify="space-between"
       color="white"
     >
-      <Stack
-        spacing={{
-          base: "4",
-          md: "5",
-        }}
-      >
+      <Stack w="100%" userSelect="none">
         <Stack justify="space-between" direction="row" align="center">
           <Flex m="0.5rem">
             <img src={Logo} alt="Logo" className="footer-logo" />
           </Flex>
-          <ButtonGroup m="0.5rem" variant="tertiary">
+          <ButtonGroup
+            className="footer-button-group"
+            justify="space-between"
+            variant="tertiary"
+          >
             <IconButton
               as="a"
               href="#"
