@@ -7,6 +7,7 @@ const about = extendTheme({
             padding: "4",
             },
             ".about-heading": {
+            fontSize: "2rem",
             textAlign: "center",
             mb: "4",
             fontWeight: "bold",

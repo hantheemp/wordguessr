@@ -1,4 +1,3 @@
-// About.jsx
 import React from "react";
 import { Box, ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
 import about from "./about.js";
