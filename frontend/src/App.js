@@ -12,8 +12,8 @@ import Navbar from "./Components/Navbar/Navbar.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import About from "./Pages/About/About.jsx";
 import GTL from "./Pages/GTL/GTL.jsx";
-import Login from "./Pages/Login/Login.jsx";
-import Register from "./Pages/Register/Register.jsx";
+import SignIn from "./Pages/SignIn/SignIn.jsx";
+import SignUp from "./Pages/SignUp/SignUp.jsx";
 import ResetPass from "./Pages/ResetPass/ResetPass.jsx";
 
 // Theme for ChakraProvider should be added.
@@ -27,8 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/gtl" element={<GTL />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/resetpass" element={<ResetPass />} />
         </Routes>
       </BrowserRouter>

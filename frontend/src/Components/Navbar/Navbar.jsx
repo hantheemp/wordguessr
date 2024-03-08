@@ -77,9 +77,10 @@ const Navbar = () => {
         <Box>
           <Button
             className="navbar-navigation-button"
+            as="a"
             variant="link"
             colorScheme="whiteAlpha"
-            href="/login"
+            href="/signin"
           >
             <Heading
               className="navbar-navigation-button-text"
@@ -91,10 +92,11 @@ const Navbar = () => {
           </Button>
           <Button
             className="navbar-navigation-button"
+            as="a"
             variant="link"
             ml={4}
             colorScheme="whiteAlpha"
-            href="/register"
+            href="/signup"
           >
             <Heading
               className="navbar-navigation-button-text"
