@@ -5,14 +5,6 @@ const providers = [
     name: 'Google',
     icon: <GoogleIcon />,
   },
-  {
-    name: 'Twitter',
-    icon: <TwitterIcon />,
-  },
-  {
-    name: 'GitHub',
-    icon: <GitHubIcon />,
-  },
 ]
 
 const OAuthButtonGroup = () => (
