@@ -48,6 +48,7 @@ const SignUp = () => (
           ></Stack>
         </Stack>
         <Box
+          className="credential-holder"
           py={{
             base: "0",
             sm: "8",
@@ -58,7 +59,7 @@ const SignUp = () => (
           }}
           bg={{
             base: "transparent",
-            sm: "bg.surface",
+            sm: "#fff", // Mavi arka plan rengi
           }}
           boxShadow={{
             base: "none",

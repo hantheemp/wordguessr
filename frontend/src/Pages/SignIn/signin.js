@@ -14,6 +14,9 @@ const signin = extendTheme({
                 height: "30%",
                 borderRadius: "50%",
             },
+            ".credential-holder":{
+                bg: "#fff", 
+            },
         }
     }
 });
